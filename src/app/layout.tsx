@@ -15,6 +15,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "OpenSlot.ai - Save your time with One-Click AI negotiation",
   description: "Define what's movable (1:1, focus, habits) - AI safely negotiates shifts, collects approvals, and books automatically with just one click.",
+  icons: {
+    icon: [
+      {
+        url: '/logo.png',
+        sizes: '32x32',
+        type: 'image/png',
+      }
+    ],
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

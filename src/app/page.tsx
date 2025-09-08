@@ -46,10 +46,20 @@ export default function Home() {
     }
   };
 
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen background-image">
       {/* Header */}
-      <header className="flex items-center p-6 max-w-7xl">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center p-6 backdrop-blur-md">
         <div className="flex items-center space-x-2">
           <Image
             src="/logo.png"
@@ -62,12 +72,17 @@ export default function Home() {
         </div>
         <nav className="hidden ml-60 md:flex items-center space-x-60">
           <a href="#" className="text-white text-[24px]">Product</a>
-          <a href="#" className="text-white text-[24px]">Pricing</a>
+          <button 
+            onClick={scrollToPricing}
+            className="text-white text-[24px] hover:text-white/80 transition-colors"
+          >
+            Pricing
+          </button>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <section className="max-w-7xl mx-auto px-6 pb-12 md:pb-20 pt-40">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center bg-white/20 backdrop-blur-lg rounded-full px-6 py-3">
@@ -262,7 +277,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section id="pricing" className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex justify-center">
           <div className="bg-white/23 backdrop-blur-lg rounded-xl p-8 max-w-md w-full text-center">
             <h3 className="text-2xl font-bold text-white mb-8">Standard</h3>
